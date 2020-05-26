@@ -1,7 +1,7 @@
 import Actions from '../actions'
 
 const initialState = {
-  isLoading: true
+  isLoading: false
 }
 
 export default (state = initialState, action) => {
@@ -11,11 +11,13 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: true
       }
-    case Actions.TAB_ONE_DATA_RECEIVED:
+    case Actions.TAB_ONE_DATA_RECEIVED: {
       return {
         ...state,
-        isLoading: false
+        isLoading: false,
+        products: action.payload
       }
+    }
     default:
       return state
   }

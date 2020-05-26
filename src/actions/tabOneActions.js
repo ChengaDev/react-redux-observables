@@ -3,8 +3,9 @@ const TAB_ONE_DATA_REQUESTED = 'TAB_ONE_DATA_REQUESTED'
 const TAB_ONE_DATA_RECEIVED = 'TAB_ONE_DATA_RECEIVED'
 
 // Action Creators
-const requestTabOneData = () => ({
-  type: TAB_ONE_DATA_REQUESTED
+const requestTabOneData = (query: string) => ({
+  type: TAB_ONE_DATA_REQUESTED,
+  payload: query
 })
 
 const tabOneDataReceived = payload => ({
